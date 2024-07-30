@@ -1,24 +1,26 @@
-.nav{
-   overflow: hidden;
+.nav {
+  overflow: hidden;
+  position: relative; // Asegura que el menú se posicione relativamente a la nav
 
-   .wrapper{
-        display: flex;
-        gap: 50px;
-        margin-bottom: 80px;
-    }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70vh; // Asegura que ocupe toda la altura de la nav
+  }
 
-    .container{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
+  .wrapper {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 80px;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
-    .nav{
-        .wrapper{
-            margin-bottom: 0px;
-            justify-content: space-between;
-        }
+  .nav {
+    .wrapper {
+      margin-bottom: 0px;
+      justify-content: space-between;
     }
+  }
 }

@@ -1,0 +1,16 @@
+"use client";
+import { useState } from "react";
+import styles from "./style.module.scss";
+import Burger from "./burger";
+import Menu from "./menu";
+import { AnimatePresence } from "framer-motion";
+
+export default function Index() {
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+
+  return (
+    <div className={styles.header}>
+      <Menu />
+    </div>
+  );
+}

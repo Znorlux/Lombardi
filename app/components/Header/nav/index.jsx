@@ -4,24 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { height } from "../anim";
 import Body from "./Body";
-
-const links = [
-  {
-    title: "Home",
-    href: "/",
-    src: "home.png",
-  },
-  {
-    title: "Shop",
-    href: "/shop",
-    src: "shop.png",
-  },
-  {
-    title: "About Us",
-    href: "/about",
-    src: "home.png",
-  },
-];
+import Menu from "@/app/components/StairsHeader/menu";
 
 export default function Index() {
   const [selectedLink, setSelectedLink] = useState({
@@ -37,10 +20,8 @@ export default function Index() {
       exit="exit"
       className={styles.nav}
     >
-      <div className={styles.wrapper}>
-        <div className={styles.container}>
-          <div className="text-8xl">Locura</div>
-        </div>
+      <div className={styles.container}>
+        <Menu />
       </div>
     </motion.div>
   );
