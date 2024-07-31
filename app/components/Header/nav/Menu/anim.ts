@@ -2,11 +2,11 @@ export const height = {
   initial: {
     height: 0,
   },
-  enter: (i) => ({
+  enter: (i: number) => ({
     height: "100%",
     transition: { duration: 0.5, delay: 0.05 * i, ease: [0.33, 1, 0.68, 1] },
   }),
-  exit: (i) => ({
+  exit: (i: number) => ({
     height: 0,
     transition: { duration: 0.3, delay: 0.05 * i, ease: [0.33, 1, 0.68, 1] },
   }),
@@ -30,9 +30,9 @@ export const opacity = {
   initial: {
     opacity: 0,
   },
-  enter: (i) => ({
+  enter: (i: number) => ({
     opacity: 1,
-    transition: { duration: 0.5, ease: [0.33, 1, 0.68, 1], delay: i },
+    transition: { duration: 1, ease: [0.33, 1, 0.68, 1], delay: i },
   }),
   exit: {
     opacity: 0,
@@ -59,13 +59,13 @@ export const rotateX = {
     rotateX: 90,
     opacity: 0,
   },
-  enter: (i) => ({
+  enter: (i: number) => ({
     rotateX: 0,
     opacity: 1,
     transition: {
       duration: 0.5,
       ease: [0.33, 1, 0.68, 1],
-      delay: 0.3 + i * 0.05,
+      delay: 0.5 + i * 0.05,
     },
   }),
   exit: {

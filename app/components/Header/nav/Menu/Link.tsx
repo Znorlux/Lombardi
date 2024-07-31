@@ -1,18 +1,40 @@
-import styles from "./style.module.scss";
+import styles from "./Menu.module.scss";
 import { motion } from "framer-motion";
 import { mountAnim, rotateX } from "./anim";
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import Link from "next/link";
 
-export default function link({ data, index }) {
-  const { title, description, images } = data;
-  const outer = useRef(null);
-  const inner = useRef(null);
+interface LinkProps {
+  data: {
+    title: string;
+    description: string;
+    images: string[];
+  };
+  index: number;
+}
 
-  const manageMouseEnter = (e) => {
-    const bounds = e.target.getBoundingClientRect();
+export default function LinkComponent({ data, index }: LinkProps) {
+  const { title, description, images } = data;
+  const outer = useRef<HTMLDivElement>(null);
+  const inner = useRef<HTMLDivElement>(null);
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsReady(true);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const manageMouseEnter = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
+    if (!isReady) return;
+
+    const bounds = e.currentTarget.getBoundingClientRect();
     if (e.clientY < bounds.top + bounds.height / 2) {
       gsap.set(outer.current, { top: "-100%" });
       gsap.set(inner.current, { top: "100%" });
@@ -24,8 +46,12 @@ export default function link({ data, index }) {
     gsap.to(inner.current, { top: "0%", duration: 0.3 });
   };
 
-  const manageMouseLeave = (e) => {
-    const bounds = e.target.getBoundingClientRect();
+  const manageMouseLeave = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
+    if (!isReady) return;
+
+    const bounds = e.currentTarget.getBoundingClientRect();
     if (e.clientY < bounds.top + bounds.height / 2) {
       gsap.to(outer.current, { top: "-100%", duration: 0.3 });
       gsap.to(inner.current, { top: "100%", duration: 0.3 });
@@ -37,12 +63,8 @@ export default function link({ data, index }) {
 
   return (
     <motion.div
-      onMouseEnter={(e) => {
-        manageMouseEnter(e);
-      }}
-      onMouseLeave={(e) => {
-        manageMouseLeave(e);
-      }}
+      onMouseEnter={manageMouseEnter}
+      onMouseLeave={manageMouseLeave}
       variants={rotateX}
       {...mountAnim}
       custom={index}
@@ -51,11 +73,11 @@ export default function link({ data, index }) {
       <Link href="/">{title}</Link>
       <div ref={outer} className={styles.outer}>
         <div ref={inner} className={styles.inner}>
-          {[...Array(2)].map((_, index) => {
+          {[...Array(2)].map((_, idx) => {
             return (
-              <div key={index} className={styles.container}>
+              <div key={idx} className={styles.container}>
                 <div className={styles.imageContainer}>
-                  <Image src={`/images/${images[0]}`} fill aalt="image" />
+                  <Image src={`/images/${images[0]}`} fill alt="image" />
                 </div>
                 <p>{description}</p>
                 <div className={styles.imageContainer}>

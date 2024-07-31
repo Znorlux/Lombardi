@@ -1,9 +1,8 @@
 "use client";
 import styles from "./nav.module.scss";
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { height } from "../anim";
-import Menu from "./Menu";
+import Menu from "./Menu/Index";
 
 export default function Index() {
   return (

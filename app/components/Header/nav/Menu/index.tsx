@@ -1,28 +1,27 @@
 import { motion } from "framer-motion";
-import { opacity, slideLeft, mountAnim } from "./anim";
-import styles from "./style.module.scss";
+import { opacity } from "./anim";
+import styles from "./Menu.module.scss";
 import Link from "./Link";
-import { useState } from "react";
 
 const menu = [
   {
     title: "Proyectos",
-    description: "To See Everything",
+    description: "To Explore My Creations",
     images: ["projects1.jpg", "projects2.jpg"],
   },
   {
     title: "Acerca de mi",
-    description: "To Learn Everything",
+    description: "To Discover My Journey",
     images: ["agence1.jpg", "agence2.jpg"],
   },
   {
     title: "Contacto",
-    description: "To Send a FAX",
+    description: "To Start A Conversation",
     images: ["contact1.jpg", "contact2.jpg"],
   },
 ];
 
-export default function index() {
+export default function Index() {
   return (
     <motion.div
       className={styles.menu}
