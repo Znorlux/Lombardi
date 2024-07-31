@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { height } from "../anim";
 import Body from "./Body";
-import Menu from "@/app/components/StairsHeader/menu";
+import Menu from "./Menu";
 
 export default function Index() {
   const [selectedLink, setSelectedLink] = useState({
