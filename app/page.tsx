@@ -33,6 +33,6 @@ export default function Home() {
   }, [loaderFinished]);
 
   return (
-    <main>{loaderFinished ? "Hola" : <Loader timeline={timeline} />}</main>
+    <main>{loaderFinished ? <Hero/> : <Loader timeline={timeline} />}</main>
   );
 }

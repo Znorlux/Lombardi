@@ -11,7 +11,7 @@ import {
   RGBADepthPacking,
 } from "three";
 import CustomShaderMaterial from "three-custom-shader-material";
-import { mergeVertices } from "three/examples/jsm/utils/BufferGeometryUtils";
+import { mergeVertices } from "three/examples/jsm/utils/BufferGeometryUtils.js";
 import vertexShader from "./Shaders/vertex.glsl";
 import fragmentShader from "./Shaders/fragment.glsl";
 

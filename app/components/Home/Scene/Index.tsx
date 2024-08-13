@@ -23,7 +23,7 @@ function Scene() {
   };
 
   return (
-    <div className="h-screen flex w-full">
+    <div className="">
       {/*<LevaWrapper />*/}
       <Canvas
         camera={{
@@ -33,9 +33,8 @@ function Scene() {
           far: 1000,
         }}
         gl={{
-          alpha: true, // Habilitar transparencia
+          alpha: false, // Habilitar transparencia
         }}
-        style={{ background: "transparent" }}
       >
         <Suspense fallback={null}>
           <Experiment

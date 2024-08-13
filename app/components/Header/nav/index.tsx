@@ -2,7 +2,7 @@
 import styles from "./nav.module.scss";
 import { motion } from "framer-motion";
 import { height } from "../anim";
-import Menu from "./Menu/Index";
+import Menu from "./Menu/";
 
 export default function Index() {
   return (
