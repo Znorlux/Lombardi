@@ -1,23 +1,46 @@
 "use client";
-import React from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
+import { useMediaQuery } from "usehooks-ts";
 import dynamic from "next/dynamic";
-const Sphere = dynamic(() => import("./Sphere"), { ssr: false });
+import LevaWrapper from "./LevaWrapper";
+const Experiment = dynamic(() => import("./Sphere"), { ssr: false });
 
 function Scene() {
+  const isTablet = useMediaQuery("(max-width: 1199px)");
+  const isMobile = useMediaQuery("(max-width: 767px)");
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    if (isLoaded) {
+      document.body.classList.remove("loading");
+    }
+  }, [isLoaded]);
+
+  const handleLoad = () => {
+    setIsLoaded(true);
+  };
+
   return (
-    <div className="h-[70vh] w-full">
+    <div className="h-screen flex w-full">
+      {/*<LevaWrapper />*/}
       <Canvas
         camera={{
-          position: [0, 0, 5],
+          position: [0, 0, isTablet ? 9 : 6],
           fov: 45,
           near: 0.1,
-          far: 100,
+          far: 1000,
         }}
         gl={{ alpha: false }}
       >
-        <Sphere />
+        <Suspense fallback={null}>
+          <Experiment
+            shouldReduceQuality={isTablet}
+            isMobile={isMobile}
+            onLoaded={handleLoad}
+          />
+        </Suspense>
         <OrbitControls />
       </Canvas>
     </div>
