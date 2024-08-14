@@ -23,8 +23,7 @@ function Scene() {
   };
 
   return (
-    <div className="">
-      {/*<LevaWrapper />*/}
+    <div className="w-full">
       <Canvas
         camera={{
           position: [0, 0, isTablet ? 9 : 6],

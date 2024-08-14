@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { OrbitControls } from "@react-three/drei";
-import { Canvas, useFrame } from "@react-three/fiber";
+import React, { useEffect } from "react";
+import { useFrame } from "@react-three/fiber";
 import { useControls } from "leva";
-import { Suspense, useMemo, useRef } from "react";
+import { useMemo, useRef } from "react";
 import {
   Color,
   IcosahedronGeometry,
