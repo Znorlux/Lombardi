@@ -4,7 +4,6 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { useMediaQuery } from "usehooks-ts";
 import dynamic from "next/dynamic";
-import LevaWrapper from "./LevaWrapper";
 const Experiment = dynamic(() => import("./Sphere"), { ssr: false });
 
 function Scene() {
@@ -23,7 +22,7 @@ function Scene() {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full h-full">
       <Canvas
         camera={{
           position: [0, 0, isTablet ? 9 : 6],

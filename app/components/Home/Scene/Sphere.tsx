@@ -14,9 +14,13 @@ import { mergeVertices } from "three/examples/jsm/utils/BufferGeometryUtils.js";
 import vertexShader from "./Shaders/vertex.glsl";
 import fragmentShader from "./Shaders/fragment.glsl";
 
-const Experiment = ({ shouldReduceQuality, isMobile, onLoaded }) => {
-  const materialRef = useRef(null);
-  const depthMaterialRef = useRef(null);
+const Experiment = ({ shouldReduceQuality, isMobile, onLoaded }: any) => {
+  const materialRef = useRef<
+    (typeof CustomShaderMaterial & { uniforms?: any }) | null
+  >(null);
+  const depthMaterialRef = useRef<
+    (typeof CustomShaderMaterial & { uniforms?: any }) | null
+  >(null);
 
   useFrame(({ clock }) => {
     const elapsedTime = clock.getElapsedTime();

@@ -4,9 +4,14 @@ import Scene from "./Scene/Index";
 
 function Hero() {
   return (
-    <div className="relative z-0 flex h-screen w-full">
-      <Scene />
-    </div>
+    <section className="relative h-screen w-full">
+      <div className="relative z-0 h-full">
+        <Scene />
+      </div>
+      <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+        <h1 className="text-8xl font-bold text-white select-none">Lombardi</h1>
+      </div>
+    </section>
   );
 }
 
