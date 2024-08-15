@@ -15,3 +15,17 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+
+/* Fuentes */
+@font-face {
+  font-family: "Pangaia";
+  src: url("/fonts/PPPangaia-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PPNeueMontreal";
+  src: url("/fonts/ppneuemontreal-bold.otf"); /* Fuente solo en tipo Bold, no incluye otros weights*/
+}
+@font-face {
+  font-family: "RealityStone";
+  src: url("/fonts/Reality-Stone.ttf") format("truetype");
+}

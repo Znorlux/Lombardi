@@ -13,6 +13,11 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        pangaia: ["Pangaia", "sans-serif"],
+        "neue-montreal": ["PPNeueMontreal", "sans-serif"],
+        "reality-stone": ["RealityStone", "sans-serif"],
+      },
     },
   },
   plugins: [],
