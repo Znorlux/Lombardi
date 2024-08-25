@@ -54,7 +54,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, onLoaded }: any) => {
       max: 3,
       step: 0.001,
     },
-    color: "#cdf2ca",
+    color: "#ed7c62",
     speed: {
       value: 3.1,
       min: 0,
@@ -62,7 +62,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, onLoaded }: any) => {
       step: 0.001,
     },
     noiseStrength: {
-      value: 0.15,
+      value: 0.25,
       min: 0,
       max: 3,
       step: 0.001,
@@ -80,7 +80,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, onLoaded }: any) => {
       step: 1,
     },
     roughness: {
-      value: 0.28,
+      value: 0.7,
       min: 0,
       max: 1,
       step: 0.001,
@@ -101,7 +101,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, onLoaded }: any) => {
       min: 0,
       max: 1,
       step: 0.001,
-      value: 0.46,
+      value: 1,
     },
     ior: {
       min: 0.001,
@@ -113,7 +113,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, onLoaded }: any) => {
       min: 0,
       max: 1,
       step: 0.001,
-      value: 0.96,
+      value: 0.5,
     },
   });
 
@@ -155,7 +155,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, onLoaded }: any) => {
       step: 0.001,
     },
     positionZ: {
-      value: 3.5,
+      value: 5.56,
       min: -10,
       max: 10,
       step: 0.001,
@@ -189,7 +189,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, onLoaded }: any) => {
       <mesh
         geometry={geometry}
         frustumCulled={false}
-        position={[0, isMobile ? -1.3 * 0 : 0, 0]}
+        position={[2.6, isMobile ? -1.3 * 0 : 0, 0]}
       >
         <CustomShaderMaterial
           ref={materialRef}

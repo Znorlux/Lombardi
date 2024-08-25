@@ -26,14 +26,14 @@ function Scene() {
       <Canvas
         camera={{
           position: [0, 0, isTablet ? 9 : 6],
-          fov: 45,
+          fov: 48,
           near: 0.1,
           far: 1000,
         }}
         gl={{
           alpha: true, // Habilitar transparencia
         }}
-        style={{ background: "#f6f1ea" }}
+        style={{ background: "#f1e8da" }}
       >
         <Suspense fallback={null}>
           <Experiment
@@ -42,7 +42,15 @@ function Scene() {
             onLoaded={handleLoad}
           />
         </Suspense>
-        <OrbitControls />
+        <OrbitControls
+          enableZoom={false}
+          enablePan={false}
+          enableDamping
+          dampingFactor={0.2}
+          rotateSpeed={0.3}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 3}
+        />
       </Canvas>
     </div>
   );
