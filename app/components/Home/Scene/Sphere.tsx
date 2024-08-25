@@ -54,7 +54,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, onLoaded }: any) => {
       max: 3,
       step: 0.001,
     },
-    color: "#ed7c62",
+    color: "#282828",
     speed: {
       value: 3.1,
       min: 0,
@@ -74,25 +74,25 @@ const Experiment = ({ shouldReduceQuality, isMobile, onLoaded }: any) => {
       step: 0.001,
     },
     fractAmount: {
-      value: 6,
+      value: 10,
       min: 0,
       max: 10,
       step: 1,
     },
     roughness: {
-      value: 0.7,
+      value: 1,
       min: 0,
       max: 1,
       step: 0.001,
     },
     metalness: {
-      value: 0.0,
+      value: 0.79,
       min: 0,
       max: 1,
       step: 0.001,
     },
     clearcoat: {
-      value: 0,
+      value: 0.74,
       min: 0,
       max: 1,
       step: 0.001,
@@ -113,7 +113,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, onLoaded }: any) => {
       min: 0,
       max: 1,
       step: 0.001,
-      value: 0.5,
+      value: 0.29,
     },
   });
 

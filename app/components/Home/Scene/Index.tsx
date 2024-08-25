@@ -33,7 +33,7 @@ function Scene() {
         gl={{
           alpha: true, // Habilitar transparencia
         }}
-        style={{ background: "#f1e8da" }}
+        style={{ background: "#222222" }}
       >
         <Suspense fallback={null}>
           <Experiment

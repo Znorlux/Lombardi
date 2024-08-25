@@ -9,10 +9,10 @@ function Hero() {
         <Scene />
       </div>
       <div className="relative z-10 h-full flex flex-col items-start justify-center p-8 pointer-events-none">
-        <h1 className="text-6xl md:text-8xl lg:text-[20vh] font-bold text-[#ed7c62] select-none tracking-wide font-reality-stone mb-2">
+        <h1 className="text-6xl md:text-8xl lg:text-[20vh] font-bold text-[#cfc9cb] select-none tracking-wide font-reality-stone mb-2">
           Lombardi
         </h1>
-        <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#3d3d3d] select-none tracking-wide font-pangaia">
+        <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#FF69B4] select-none tracking-wide font-pangaia">
           Creative Developer
         </h2>
       </div>
