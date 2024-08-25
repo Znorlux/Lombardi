@@ -70,7 +70,7 @@
       }
 
       .burger {
-        width: 22.5px;
+        width: 26.5px;
         position: relative;
         pointer-events: none;
 
@@ -97,12 +97,12 @@
       .burgerActive {
         &::after {
           transform: rotate(45deg);
-          top: -1px;
+          top: -4px;
         }
 
         &::before {
           transform: rotate(-45deg);
-          top: 1px;
+          top: -2px;
         }
       }
     }

@@ -5,17 +5,17 @@ import Link from "./Link";
 
 const menu = [
   {
-    title: "Proyectos",
+    title: "Projects",
     description: "To Explore My Creations",
     images: ["projects1.jpg", "projects2.jpg"],
   },
   {
-    title: "Acerca de mi",
+    title: "About",
     description: "To Discover My Journey",
     images: ["agence1.jpg", "agence2.jpg"],
   },
   {
-    title: "Contacto",
+    title: "Contact",
     description: "To Start A Conversation",
     images: ["contact1.jpg", "contact2.jpg"],
   },
