@@ -8,6 +8,7 @@ import {
   MeshDepthMaterial,
   MeshPhysicalMaterial,
   RGBADepthPacking,
+  PointLight,
 } from "three";
 import CustomShaderMaterial from "three-custom-shader-material";
 import { mergeVertices } from "three/examples/jsm/utils/BufferGeometryUtils.js";
@@ -21,6 +22,9 @@ const Experiment = ({ shouldReduceQuality, isMobile, onLoaded }: any) => {
   const depthMaterialRef = useRef<
     (typeof CustomShaderMaterial & { uniforms?: any }) | null
   >(null);
+
+  const topLightRef = useRef<PointLight>(null);
+  const bottomLightRef = useRef<PointLight>(null);
 
   useFrame(({ clock }) => {
     const elapsedTime = clock.getElapsedTime();
@@ -227,6 +231,22 @@ const Experiment = ({ shouldReduceQuality, isMobile, onLoaded }: any) => {
           directionalLightPositionY,
           directionalLightPositionZ,
         ]}
+      />
+      {/* Luz Neón Superior */}
+      <pointLight
+        ref={topLightRef}
+        color={"#40E0D0"} // Neón azul más intenso
+        intensity={20}
+        distance={15}
+        position={[0, 5, 0]} // Más alto para una iluminación más amplia
+      />
+      {/* Luz Neón Inferior */}
+      <pointLight
+        ref={bottomLightRef}
+        color={"#FF1493"} // Neón rosa más brillante
+        intensity={20}
+        distance={15}
+        position={[0, -5, 0]} // Más bajo para iluminar desde debajo
       />
     </>
   );
