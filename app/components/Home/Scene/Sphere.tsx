@@ -147,7 +147,7 @@ const Experiment = ({ shouldReduceQuality, isMobile, onLoaded }: any) => {
       step: 0.001,
     },
     positionX: {
-      value: -2,
+      value: 10,
       min: -10,
       max: 10,
       step: 0.001,
